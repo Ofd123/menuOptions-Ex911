@@ -3,6 +3,7 @@ package com.example.menuoptions;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity
     originalNumber = findViewById(R.id.num1);
     functioningNumber = findViewById(R.id.num2);
     resultNumber = findViewById(R.id.result);
+    resultNumber.setVisibility(View.INVISIBLE);
+
+        Toast.makeText(this, "choose numbers then choose the wanted function by pressing the 3 dots", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -68,25 +72,36 @@ public class MainActivity extends AppCompatActivity
             {
                 num1 = Double.parseDouble(num1str);
                 num2 = Double.parseDouble(num2str);
-                resultNumber.setText(String.valueOf(num1 + num2));
+                resultNumber.setVisibility(View.VISIBLE);
+                resultNumber.setText("result: "+String.valueOf(num1 + num2));
             }
             else if (command.equals("decrease"))
             {
                 num1 = Double.parseDouble(num1str);
                 num2 = Double.parseDouble(num2str);
-                resultNumber.setText(String.valueOf(num1 - num2));
+                resultNumber.setVisibility(View.VISIBLE);
+                resultNumber.setText("result: "+String.valueOf(num1 - num2));
             }
             else if (command.equals("multiply"))
             {
                 num1 = Double.parseDouble(num1str);
                 num2 = Double.parseDouble(num2str);
-                resultNumber.setText(String.valueOf(num1 * num2));
+                resultNumber.setVisibility(View.VISIBLE);
+                resultNumber.setText("result: "+String.valueOf(num1 * num2));
             }
             else if (command.equals("divide"))
             {
+
                 num1 = Double.parseDouble(num1str);
                 num2 = Double.parseDouble(num2str);
-                resultNumber.setText(String.valueOf(num1 / num2));
+                if (num2 == 0)
+                {
+                    Toast.makeText(this, "you can not divide by zero!", Toast.LENGTH_SHORT).show();
+                    return super.onOptionsItemSelected(item);
+                }
+                resultNumber.setVisibility(View.VISIBLE);
+                resultNumber.setText("result: "+String.valueOf(num1 / num2));
+
             }
         }
         return super.onOptionsItemSelected(item);
