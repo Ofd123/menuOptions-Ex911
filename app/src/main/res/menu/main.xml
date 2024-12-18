@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id= "@+id/add"
+        android:title = "add"
+        android:orderInCategory = "100" />
+
+    <item
+        android:id= "@+id/decrease"
+        android:title = "decrease"
+        android:orderInCategory = "200" />
+    <item
+        android:id= "@+id/multiply"
+        android:title = "multiply"
+        android:orderInCategory = "300" />
+
+    <item
+        android:id= "@+id/divide"
+        android:title = "divide"
+        android:orderInCategory = "400" />
+</menu>
