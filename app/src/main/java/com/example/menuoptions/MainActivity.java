@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity
         }
         return true;
     }
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
         String command = item.getTitle().toString();
         ;
         num1str = originalNumber.getText().toString();
